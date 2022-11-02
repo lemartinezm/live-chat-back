@@ -30,6 +30,10 @@ io.on("connection", (socket) => {
     io.emit("chat message", message);
   });
 
+  socket.on("writing", (userWriting) => {
+    io.emit("writing", userWriting);
+  });
+
   socket.on("disconnect", () => {
     console.log("a user disconnected");
   });
